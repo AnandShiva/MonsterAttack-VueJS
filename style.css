@@ -1,0 +1,41 @@
+.vbox{
+   display: flex;
+   flex-direction: column; 
+}
+.flex_center_all{
+    justify-content: center;
+    align-items: center;
+}
+.row{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-around;
+}
+
+.box{
+    width : 150px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game_container{
+    width: 80vw;
+    height: 80vh;
+    justify-content: space-around;
+    background-color: aqua;
+}
+
+#vue_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+}
+
+.power_bar{
+    width : 40%;
+    background-color: chartreuse;
+}
