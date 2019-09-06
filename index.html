@@ -33,7 +33,7 @@
                 <button v-on:click="special_attack">Special Attack</button>
                 <button v-on:click="heal"> Heal</button>
                 <button v-on:click="end_game">End Game</button> </div>
-            <div class="vbox">
+            <div id="logs_container" class="vbox">
                 <template style="width: 80%" v-for="log in logs">
                     <div class="row" v-bind:style="{'background-color': log.won == 'you' ? 'lightgreen' : 'orange' }">
                         {{log.stepStatus}}

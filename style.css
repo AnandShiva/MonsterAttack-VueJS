@@ -35,6 +35,10 @@
     align-items: center;
     bottom: 0;
 }
+#logs_container{
+    height : 40%;
+    overflow-y: auto;
+}
 
 .power_bar{
     width : 40%;
