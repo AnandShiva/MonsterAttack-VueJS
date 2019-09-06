@@ -1,6 +1,7 @@
 .vbox{
    display: flex;
    flex-direction: column; 
+   width: 100%;
 }
 .flex_center_all{
     justify-content: center;
@@ -37,5 +38,5 @@
 
 .power_bar{
     width : 40%;
-    background-color: chartreuse;
+    background-color: rgb(245, 139, 90);
 }

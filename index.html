@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -6,16 +7,44 @@
     <title>Monster Madness</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
     <div id="vue_container">
-       <div class="game_container vbox flex_center_all">
-            <div class='row'> <div class="box" style="background-color: green"> You </div> <div class="box" style="background-color: red"> Monster</div> </div>
-            <div class='row'><div class="power_bar">power bar 1</div><div class="power_bar"> power bar 2</div></div>
-            <div class='row'>ScoreCard</div>
-       </div>
+        <div class="game_container vbox flex_center_all">
+            <div class='row'>
+                <div class="box" style="background-color: green"> You </div>
+                <div class="box" style="background-color: red"> Monster</div>
+            </div>
+            <div class='row'>
+                <div class="power_bar">
+                    <div class="row" :style="{'background-color' : 'green',width : yourHealth+'%'}">
+                        {{yourHealth}}
+                    </div>
+                </div>
+                <div class="power_bar">
+                    <div class="row" :style="{'background-color' : 'green',width : monsterHealth+'%'}">
+                        {{yourHealth}}
+                    </div>
+                </div>
+            </div>
+            <div v-if='!bGameInProgress' class='row'> <button v-on:click="start_game"> Start Game</button> </div>
+            <div v-else class='row'>
+                <button v-on:click="attack">Attack</button>
+                <button v-on:click="special_attack">Special Attack</button>
+                <button v-on:click="heal"> Heal</button>
+                <button v-on:click="end_game">End Game</button> </div>
+            <div class="vbox">
+                <template style="width: 80%" v-for="log in logs">
+                    <div class="row" v-bind:style="{'background-color': log.won == 'you' ? 'lightgreen' : 'orange' }">
+                        {{log.stepStatus}}
+                    </div>
+                </template>
+            </div>
+        </div>
     </div>
-    
+
 </body>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="./app.js"></script>
+
 </html>
